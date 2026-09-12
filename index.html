@@ -1,451 +1,1399 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Night Tattoo Body Art | Arte Corporal de Alta Precisão</title>
-  <meta name="description" content="Night Tattoo Body Art - Estúdio de tatuagem especializado em arte corporal de alta precisão e estilo exclusivo. Centro, Cerqueira César - SP.">
+  <meta name="description" content="Night Tattoo Body Art — Estúdio de tatuagem em Cerqueira César. Artistas especializados em realismo, blackwork e styles variados.">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#070707">
+  <title>Night Tattoo Body Art | Tatuagem de Alto Padrão em Cerqueira César</title>
+
+  <!-- Otimização de conexão: carregamento rápido dos CDNs -->
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="preload" href="Referência/fundo site animado.mp4" as="video" type="video/mp4" fetchpriority="high">
+  <!-- Preload dos assets acima da dobra (logo da navbar + poster do hero) -->
+  <link rel="preload" as="image" href="assets/logo.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/fundo-site.webp" type="image/webp" fetchpriority="high">
+  <!-- Preload dos assets críticos de imagem (artistas + primeiros itens das grades) -->
+  <link rel="preload" as="image" href="assets/night.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/higor.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/edson.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="portfolio/night-1.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="portfolio/higor-1.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="portfolio/edson-1.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="portfolio/night-2.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="portfolio/night-3.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="portfolio/night-4.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="portfolio/higor-2.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="portfolio/higor-3.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="portfolio/higor-4.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="portfolio/edson-2.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="portfolio/edson-3.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="portfolio/edson-4.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="inspiracoes/braco/h-1.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="inspiracoes/braco/m-1.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="inspiracoes/antebraco/h-1.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="inspiracoes/antebraco/m-1.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="inspiracoes/pescoco/h-1.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="inspiracoes/pescoco/m-1.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="inspiracoes/costas/h-1.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="inspiracoes/costas/m-1.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="inspiracoes/coxa/h-1.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="inspiracoes/coxa/m-1.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="inspiracoes/canela/h-1.thumb.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="inspiracoes/canela/m-1.thumb.avif" type="image/avif" fetchpriority="high">
+
+  <!-- Favicon: logo oficial do estúdio (PNG) -->
+  <link rel="icon" type="image/png" href="Referência/logo-night-tatto.png">
+  <link rel="apple-touch-icon" href="Referência/logo-night-tatto.png">
+
+  <!--
+  ============================================================================
+  NIGHT TATTOO BODY ART — DIRETRIZES DE PERFORMANCE & CARREGAMENTO RÁPIDO
+  ============================================================================
+  1) ASSETS
+     • Assets críticos (logo, fotos dos artistas e primeiros itens das grades)
+       são pré-carregados com <link rel="preload"> + loading="eager" + fetchpriority="high".
+     • Imagens secundárias abaixo da dobra usam loading="lazy" + decoding="async".
+     • O vídeo do hero usa preload="auto" e é servido localmente, sem cold-start.
+     • Ícones SVG são definidos uma única vez em um <symbol> e reutilizados
+       via <use> — elimina repetição de nós no DOM.
+     • Fontes carregam com display=swap e preconnect para os hosts do Google.
+  2) DOM
+     • Estrutura com hierarchy semântica (header/section/footer) e sem
+       aninhamento desnecessário — reduz o custo de renderização.
+     • CSS via Tailwind CDN (JIT) + arquivo local styles.css enxuto.
+     • Sem dependências de build; deploy estático instantâneo na Vercel.
+  3) MÍDIA
+     • Vídeo de fundo com atributos autoplay muted loop playsinline para
+       funcionar como um GIF contínuo, sem controles e sem autoplay bloqueado.
+     • Filtro CSS satura o vídeo (saturate) sem re-encode do arquivo.
+  ============================================================================
+  -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="icon" type="image/png" href="/logo.png">
-</head>
-<body>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- ========== HEADER FIXO ========== -->
-  <header id="header" class="header">
-    <div class="header-inner">
-      <a href="#hero" class="header-logo">
-        <img src="/logo.png" alt="Night Tattoo Body Art" width="48" height="48">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: { 400: '#E6CA65', 500: '#D4AF37', 650: '#B89728', 800: '#8A6F1A' },
+            dark: { 950: '#070707', 900: '#0F0F0F', 850: '#141414', 800: '#1C1C1C', 700: '#2A2A2A' }
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 4px; border: 1px solid rgba(212, 175, 55, 0.2); }
+    ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF 0%, #E6CA65 50%, #D4AF37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glass-card {
+      background: rgba(20, 20, 20, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(212, 175, 55, 0.35);
+      box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.2);
+    }
+
+    /* ===== VÍDEO DE FUNDO — RESTRITO À HERO SECTION ===== */
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      /* Leve elevação de saturação e contraste para vivacidade */
+      filter: saturate(1.25) contrast(1.15);
+    }
+
+    /* ===== LOGO CIRCULAR / IDENTIDADE ===== */
+    .logo-ring {
+      padding: 2px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, rgba(212,175,55,0.55), rgba(255,255,255,0.06) 40%, rgba(212,175,55,0.12));
+    }
+
+    .logo-core {
+      border-radius: 9999px;
+      background: rgba(10, 10, 10, 0.55);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-core img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      mix-blend-mode: normal;
+      filter: brightness(1.05) contrast(1.05);
+    }
+
+    /* ===== TIPOGRAFIA HARMONIZADA ===== */
+    .eyebrow {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+
+    .artist-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ===== ARTIST OPTION CARDS (FORM) ===== */
+    .artist-option-card {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .artist-option-card.selected {
+      border-color: #D4AF37 !important;
+      box-shadow: 0 0 30px -5px rgba(212, 175, 55, 0.3);
+    }
+
+    .artist-option-card.selected .artist-radio-dot {
+      background: #D4AF37;
+      border-color: #D4AF37;
+    }
+
+    .artist-radio-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid #555;
+      transition: all 0.3s ease;
+    }
+
+    /* ===== PORTFÓLIO — QUADRADO ESTRITO ===== */
+    .portfolio-img {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: transform 0.4s ease, border-color 0.3s ease;
+    }
+
+    .portfolio-img:hover {
+      transform: scale(1.04);
+      border-color: rgba(212, 175, 55, 0.4);
+    }
+
+    .portfolio-square {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+    }
+
+    /* ===== ARTISTAS — EXPANSÃO NO DESKTOP ===== */
+    @media (min-width: 1280px) {
+      .artists-expanded .artist-photo {
+        height: 320px;
+      }
+      .artists-expanded .artist-card-inner {
+        padding: 2.25rem;
+      }
+      .artists-expanded .portfolio-square {
+        border-radius: 12px;
+      }
+    }
+
+    /* ===== FORM FIELD ERRORS ===== */
+    .field-error {
+      color: #e11d1d;
+      font-size: 0.78rem;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* ===== PERFORMANCE: renderização por conteúdo ===== */
+    .cv-auto {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 700px;
+    }
+
+    /* ===== LIGHTBOX (MODAL DE PORTFÓLIO) ===== */
+    .portfolio-img { cursor: zoom-in; }
+
+    .lightbox {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .lightbox.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .lightbox-frame {
+      transform: scale(0.94);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .lightbox.open .lightbox-frame {
+      transform: scale(1);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .lightbox, .lightbox-frame { transition: none !important; }
+    }
+
+    /* ===== ANIMAÇÕES LEVES E FLUÍDAS ===== */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float { animation: float 7s ease-in-out infinite; }
+
+    @keyframes ctaGlow {
+      0%, 100% { box-shadow: 0 0 18px 0 rgba(212, 175, 55, 0.25); }
+      50% { box-shadow: 0 0 40px 6px rgba(212, 175, 55, 0.45); }
+    }
+    .animate-cta { animation: ctaGlow 3.5s ease-in-out infinite; }
+
+    @keyframes orbPulse {
+      0%, 100% { opacity: 0.5; transform: translate(-50%, 0) scale(1); }
+      50% { opacity: 1; transform: translate(-50%, 0) scale(1.08); }
+    }
+    .animate-orb { animation: orbPulse 8s ease-in-out infinite; }
+
+    /* Revelação ao rolar — surge vindo de baixo (bidirecional: aparece ao entrar, reseta ao sair) */
+    .reveal,
+    .reveal-left,
+    .reveal-right {
+      opacity: 0;
+      transform: translate3d(0, 60px, 0);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.in-view, .reveal-left.in-view, .reveal-right.in-view { opacity: 1; transform: translate3d(0, 0, 0); }
+    .reveal-delay-1 { transition-delay: 120ms; }
+    .reveal-delay-2 { transition-delay: 240ms; }
+    .reveal-delay-3 { transition-delay: 360ms; }
+
+    /* Flutuação contínua e sutil de elementos visuais */
+    @keyframes floatSoft {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .animate-float-soft { animation: floatSoft 6s ease-in-out infinite; will-change: transform; }
+
+    /* Acessibilidade: respeita redução de movimento */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; }
+      .animate-float, .animate-float-soft, .animate-cta, .animate-orb { animation: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-black text-gray-200 font-sans antialiased selection:bg-gold-500 selection:text-dark-950">
+
+  <!-- SVG SPRITE — ícones definidos uma única vez (otimização de DOM) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+    </symbol>
+    <symbol id="icon-male" viewBox="0 0 24 24">
+      <circle cx="10" cy="14" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M13.5 10.5L18.5 5.5M18.5 5.5V9.5M18.5 5.5H14.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-female" viewBox="0 0 24 24">
+      <circle cx="12" cy="10" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M12 15v5M9.5 20h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <!-- HEADER -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-dark-950/80 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-4 group">
+        <!-- Logo circular sutil -->
+        <div class="logo-ring w-14 h-14">
+          <div class="logo-core w-full h-full">
+            <img src="assets/logo.webp" alt="Night Tattoo Body Art" class="w-full h-full" fetchpriority="high" width="56" height="56">
+          </div>
+        </div>
+        <div class="flex flex-col leading-none">
+          <span class="font-display text-2xl md:text-[1.7rem] font-bold tracking-wide gold-gradient-text">NIGHT TATTOO</span>
+          <span class="mt-1 text-[9px] tracking-[0.3em] uppercase text-gray-400 group-hover:text-gold-400 transition-colors">Body Art • Cerqueira César</span>
+        </div>
       </a>
-      <nav class="header-nav" id="mainNav">
-        <a href="#tatuadores">Tatuadores</a>
-        <a href="#escolha-sua-tattoo">Escolha sua Tattoo</a>
-        <a href="#localizacao">Localização</a>
+
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+        <a href="#inicio" class="text-gray-300 hover:text-gold-400 transition-colors">Início</a>
+        <a href="#artistas" class="text-gray-300 hover:text-gold-400 transition-colors">Artistas</a>
+        <a href="#inspiracoes" class="hidden lg:inline text-gray-300 hover:text-gold-400 transition-colors">Inspirações</a>
+        <a href="#orcamento" class="text-gray-300 hover:text-gold-400 transition-colors">Agendar</a>
       </nav>
-      <a href="https://wa.me/5514997377444?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20no%20Night%20Tattoo." class="btn btn-whatsapp header-cta" target="_blank" rel="noopener">
-        Falar no WhatsApp
-      </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
-        <span></span><span></span><span></span>
+
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="https://wa.me/5514997377444?text=Olá%20Night%20Tattoo%20gostaria%20de%20agendar%20uma%20tatuagem"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-label px-6 py-3 rounded-full bg-gradient-to-r from-gold-500 to-gold-650 text-dark-950 text-sm shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 hover:scale-105 transition-all duration-300 flex items-center gap-2">
+          <svg class="w-4 h-4 fill-current"><use href="#icon-whatsapp"></use></svg>
+          Agendar Horário
+        </a>
+      </div>
+
+      <button id="menuBtn" class="md:hidden text-gray-300 hover:text-gold-400 focus:outline-none p-2" aria-label="Menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
       </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 right-0 bg-dark-900/95 backdrop-blur-xl border-b border-white/10 px-6 py-6 flex flex-col space-y-4">
+      <a href="#inicio" class="mobile-link text-gray-300 hover:text-gold-400 text-lg font-medium">Início</a>
+      <a href="#artistas" class="mobile-link text-gray-300 hover:text-gold-400 text-lg font-medium">Artistas</a>
+      <a href="#inspiracoes" class="mobile-link text-gray-300 hover:text-gold-400 text-lg font-medium">Inspirações</a>
+      <a href="#orcamento" class="mobile-link text-gray-300 hover:text-gold-400 text-lg font-medium">Agendar</a>
+      <div class="pt-4 border-t border-white/10">
+        <a href="https://wa.me/5514997377444?text=Olá%20Night%20Tattoo%20gostaria%20de%20agendar%20uma%20tatuagem"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-label w-full py-3 rounded-xl bg-gradient-to-r from-gold-500 to-gold-650 text-dark-950 text-center text-sm">
+          Agendar pelo WhatsApp
+        </a>
+      </div>
     </div>
   </header>
 
-  <!-- ========== HERO ========== -->
-  <section id="hero" class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <h1 class="hero-title">Arte que marca.<br><span class="text-red">Estilo que dura.</span></h1>
-      <p class="hero-sub">Arte corporal de alta precisão e estilo exclusivo. Cada traço pensado pra ser único.</p>
-      <div class="hero-actions">
-        <a href="https://wa.me/5514997377444?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20no%20Night%20Tattoo." class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Agendar Consulta
+  <!-- ============ HERO SECTION ============ -->
+  <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden">
+    <!-- Vídeo de fundo local da hero — loop de 8s instantâneo, preload otimizado -->
+    <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/fundo-site.webp" disablepictureinpicture role="presentation" aria-hidden="true" fetchpriority="high">
+      <source src="Referência/fundo site animado.mp4" type="video/mp4">
+    </video>
+
+    <!-- Overlay escuro semi-transparente para contraste com o texto -->
+    <div class="absolute inset-0 z-[1] bg-black/60"></div>
+
+    <!-- Glow orb decorativo pulsante -->
+    <div class="absolute top-1/4 left-1/2 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none z-[1] animate-orb"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <!-- Título Principal -->
+      <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6 leading-[1.05]">
+        Night Tattoo
+        <span class="gold-gradient-text font-medium italic block">Body Art</span>
+      </h1>
+
+      <!-- Slogan -->
+      <p class="max-w-2xl mx-auto text-gray-300 text-base sm:text-lg md:text-xl font-light mb-10 leading-relaxed">
+        Sua arte, da mente para a pele.
+      </p>
+
+      <!-- Botões CTA -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+        <a href="#orcamento"
+           class="btn-label animate-cta w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-gold-500 via-gold-400 to-gold-650 text-dark-950 text-sm shadow-xl shadow-gold-500/25 hover:shadow-gold-500/40 hover:scale-105 transition-all duration-300 text-center">
+          Agendar Agora
         </a>
-        <a href="#tatuadores" class="btn btn-outline btn-lg">Ver Portfólio</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CREDENCIAIS ========== -->
-  <section class="credentials">
-    <div class="container">
-      <div class="credentials-grid">
-        <div class="credential-item">
-          <span class="credential-number text-red">[AJUSTAR]</span>
-          <span class="credential-label">Tatuadores especialistas</span>
-        </div>
-        <div class="credential-item">
-          <span class="credential-icon text-yellow">★</span>
-          <span class="credential-label">Estúdio próprio</span>
-        </div>
-        <div class="credential-item">
-          <span class="credential-icon text-yellow">★</span>
-          <span class="credential-label">Atendimento personalizado</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== SOBRE ========== -->
-  <section id="sobre" class="section">
-    <div class="container">
-      <h2 class="section-title">Sobre o <span class="text-red">Night Tattoo</span></h2>
-      <div class="about-grid">
-        <div class="about-text">
-          <p>O Night Tattoo Body Art nasceu da paixão por arte corporal de alta precisão. Cada tatuagem é tratada como uma obra única, desenvolvida sob medida pra cada cliente, com atenção total aos detalhes e ao estilo pessoal de quem busca se expressar.</p>
-          <p>Nosso estúdio oferece um ambiente profissional, seguro e acolhedor, onde a criatividade encontra a técnica. Trabalhamos com os melhores materiais e seguimos rigorosos protocolos de higiene, garantindo uma experiência tranquila do início ao fim.</p>
-        </div>
-        <div class="about-image">
-          <div class="image-placeholder">
-            <span>[ Imagem do espaço físico ]</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== TATUADORES E PORTFÓLIO ========== -->
-  <section id="tatuadores" class="section section-dark">
-    <div class="container">
-      <h2 class="section-title">Nossos <span class="text-red">Tatuadores</span></h2>
-      <p class="section-subtitle">Conheça os artistas e seus portfólios</p>
-
-      <div class="artists-grid">
-        <!-- TATUADOR 1: Night -->
-        <div class="artist-card">
-          <h3 class="artist-name">Night</h3>
-          <!--
-            PORTFÓLIO - NIGHT
-            Grid preparado para até 9 imagens (3x3).
-            Para adicionar imagens, descomente os blocos .portfolio-item abaixo
-            e substitua os src/alt pelo caminho e descrição reais.
-          -->
-          <div class="portfolio-grid">
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Night - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Night - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Night - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Night - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Night - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Night - estilo a definir</p></div>
-            <!-- DESCOMENTE PARA ADICIONAR ATÉ 3 IMAGENS EXTRAS (total: 9) -->
-            <!--
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Night - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Night - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Night - estilo a definir</p></div>
-            -->
-          </div>
-          <a href="https://wa.me/5514997377444?text=Ol%C3%A1!%20Vi%20o%20seu%20portf%C3%B3lio%20no%20site%20e%20achei%20incr%C3%ADvel!%20Gostaria%20de%20conversar%20mais%20sobre%20seus%20servi%C3%A7os." class="btn btn-whatsapp btn-artist" target="_blank" rel="noopener">Falar com Night no WhatsApp</a>
-        </div>
-
-        <div class="artist-divider"></div>
-
-        <!-- TATUADOR 2: Higor -->
-        <div class="artist-card">
-          <h3 class="artist-name">Higor</h3>
-          <div class="portfolio-grid">
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Higor - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Higor - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Higor - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Higor - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Higor - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Higor - estilo a definir</p></div>
-            <!-- DESCOMENTE PARA ADICIONAR ATÉ 3 IMAGENS EXTRAS (total: 9) -->
-            <!--
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Higor - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Higor - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Higor - estilo a definir</p></div>
-            -->
-          </div>
-          <a href="https://wa.me/5514996042781?text=Ol%C3%A1!%20Vi%20o%20seu%20portf%C3%B3lio%20no%20site%20e%20achei%20incr%C3%ADvel!%20Gostaria%20de%20conversar%20mais%20sobre%20seus%20servi%C3%A7os." class="btn btn-whatsapp btn-artist" target="_blank" rel="noopener">Falar com Higor no WhatsApp</a>
-        </div>
-
-        <div class="artist-divider"></div>
-
-        <!-- TATUADOR 3: Edson -->
-        <div class="artist-card">
-          <h3 class="artist-name">Edson</h3>
-          <div class="portfolio-grid">
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Edson - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Edson - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Edson - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Edson - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Edson - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Edson - estilo a definir</p></div>
-            <!-- DESCOMENTE PARA ADICIONAR ATÉ 3 IMAGENS EXTRAS (total: 9) -->
-            <!--
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Edson - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Edson - estilo a definir</p></div>
-            <div class="portfolio-item"><div class="image-placeholder square"><span>[ Portfólio ]</span></div><p class="portfolio-alt">Tatuagem realizada por Edson - estilo a definir</p></div>
-            -->
-          </div>
-          <a href="https://wa.me/5514996200643?text=Ol%C3%A1!%20Vi%20o%20seu%20portf%C3%B3lio%20no%20site%20e%20achei%20incr%C3%ADvel!20Gostaria%20de%20conversar%20mais%20sobre%20seus%20servi%C3%A7os." class="btn btn-whatsapp btn-artist" target="_blank" rel="noopener">Falar com Edson no WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== ESCOLHA SUA TATTOO ========== -->
-  <section id="escolha-sua-tattoo" class="section">
-    <div class="container">
-      <h2 class="section-title">Não sabe onde tatuar?<br><span class="text-red">A gente te ajuda a decidir.</span></h2>
-      <p class="section-subtitle">Clique na região do corpo que você quer tatuar e receba uma sugestão de estilo.</p>
-
-      <!-- Abas mobile -->
-      <div class="body-tabs">
-        <button class="body-tab active" data-tab="frente">Frente</button>
-        <button class="body-tab" data-tab="costas">Costas</button>
-      </div>
-
-      <div class="body-diagrams-wrapper">
-        <!-- DIAGRAMA FRENTE -->
-        <div class="body-diagram-panel active" id="panel-frente">
-          <svg id="svg-frente" viewBox="0 0 200 420" xmlns="http://www.w3.org/2000/svg" class="body-svg">
-            <!-- Contorno do corpo - Frente -->
-            <g class="body-outline" stroke="#444" stroke-width="1.5" fill="none">
-              <!-- Cabeça -->
-              <ellipse cx="100" cy="32" rx="22" ry="28"/>
-              <!-- Pescoço -->
-              <line x1="90" y1="58" x2="90" y2="72"/>
-              <line x1="110" y1="58" x2="110" y2="72"/>
-              <!-- Ombros -->
-              <line x1="90" y1="72" x2="48" y2="88"/>
-              <line x1="110" y1="72" x2="152" y2="88"/>
-              <!-- Braços esquerdo -->
-              <line x1="48" y1="88" x2="38" y2="140"/>
-              <line x1="38" y1="140" x2="32" y2="190"/>
-              <line x1="32" y1="190" x2="28" y2="210"/>
-              <line x1="42" y1="190" x2="46" y2="210"/>
-              <line x1="42" y1="140" x2="52" y2="190"/>
-              <!-- Braço direito -->
-              <line x1="152" y1="88" x2="162" y2="140"/>
-              <line x1="162" y1="140" x2="168" y2="190"/>
-              <line x1="168" y1="190" x2="172" y2="210"/>
-              <line x1="158" y1="190" x2="154" y2="210"/>
-              <line x1="158" y1="140" x2="148" y2="190"/>
-              <!-- Tronco -->
-              <line x1="65" y1="88" x2="60" y2="200"/>
-              <line x1="135" y1="88" x2="140" y2="200"/>
-              <!-- Quadril / cintura -->
-              <line x1="60" y1="200" x2="68" y2="220"/>
-              <line x1="140" y1="200" x2="132" y2="220"/>
-              <!-- Pernas -->
-              <line x1="68" y1="220" x2="66" y2="300"/>
-              <line x1="66" y1="300" x2="64" y2="370"/>
-              <line x1="88" y1="220" x2="86" y2="300"/>
-              <line x1="86" y1="300" x2="84" y2="370"/>
-              <line x1="132" y1="220" x2="134" y2="300"/>
-              <line x1="134" y1="300" x2="136" y2="370"/>
-              <line x1="112" y1="220" x2="114" y2="300"/>
-              <line x1="114" y1="300" x2="116" y2="370"/>
-              <!-- Pés (não clicáveis) -->
-              <path d="M64,370 Q60,385 52,390 Q48,392 52,398 Q60,402 80,398 Q88,394 84,370" fill="#1a1a1a" stroke="#333"/>
-              <path d="M136,370 Q140,385 148,390 Q152,392 148,398 Q140,402 120,398 Q112,394 116,370" fill="#1a1a1a" stroke="#333"/>
-            </g>
-
-            <!-- REGIÕES CLICÁVEIS - FRENTE -->
-            <!-- Pescoço / nuca frontal -->
-            <polygon data-region="pescoço-frente" class="body-region" points="88,58 112,58 114,74 86,74"/>
-            <!-- Ombro esquerdo -->
-            <polygon data-region="ombro-frente-e" class="body-region" points="48,88 90,72 90,92 58,98"/>
-            <!-- Ombro direito -->
-            <polygon data-region="ombro-frente-d" class="body-region" points="152,88 110,72 110,92 142,98"/>
-            <!-- Peito -->
-            <polygon data-region="peito" class="body-region" points="65,92 135,92 138,150 62,150"/>
-            <!-- Costela lateral esquerda -->
-            <polygon data-region="costela-lateral" class="body-region" points="52,140 62,150 58,200 48,190"/>
-            <!-- Abdômen -->
-            <polygon data-region="abdômen" class="body-region" points="62,150 138,150 140,210 60,210"/>
-            <!-- Braço esquerdo (bíceps) -->
-            <polygon data-region="braço-bíceps" class="body-region" points="38,100 58,98 52,190 32,190 38,140"/>
-            <!-- Braço direito (bíceps) -->
-            <polygon data-region="braço-bíceps-d" class="body-region" points="162,100 142,98 148,190 168,190 162,140"/>
-            <!-- Antebraço esquerdo -->
-            <polygon data-region="antebraço-e" class="body-region" points="32,190 52,190 46,210 28,210"/>
-            <!-- Antebraço direito -->
-            <polygon data-region="antebraço-d" class="body-region" points="148,190 168,190 172,210 154,210"/>
-            <!-- Mão esquerda -->
-            <polygon data-region="mão-e" class="body-region" points="28,210 46,210 44,232 26,232"/>
-            <!-- Mão direita -->
-            <polygon data-region="mão-d" class="body-region" points="154,210 172,210 174,232 156,232"/>
-            <!-- Coxa esquerda (frente) -->
-            <polygon data-region="coxa-frente-e" class="body-region" points="68,220 88,220 86,300 66,300"/>
-            <!-- Coxa direita (frente) -->
-            <polygon data-region="coxa-frente-d" class="body-region" points="112,220 132,220 134,300 114,300"/>
-            <!-- Canela esquerda -->
-            <polygon data-region="canela-e" class="body-region" points="66,300 86,300 84,370 64,370"/>
-            <!-- Canela direita -->
-            <polygon data-region="canela-d" class="body-region" points="114,300 134,300 136,370 116,370"/>
-          </svg>
-        </div>
-
-        <!-- DIAGRAMA COSTAS -->
-        <div class="body-diagram-panel" id="panel-costas">
-          <svg id="svg-costas" viewBox="0 0 200 420" xmlns="http://www.w3.org/2000/svg" class="body-svg">
-            <!-- Contorno do corpo - Costas -->
-            <g class="body-outline" stroke="#444" stroke-width="1.5" fill="none">
-              <ellipse cx="100" cy="32" rx="22" ry="28"/>
-              <line x1="90" y1="58" x2="90" y2="72"/>
-              <line x1="110" y1="58" x2="110" y2="72"/>
-              <line x1="90" y1="72" x2="48" y2="88"/>
-              <line x1="110" y1="72" x2="152" y2="88"/>
-              <line x1="48" y1="88" x2="38" y2="140"/>
-              <line x1="38" y1="140" x2="32" y2="190"/>
-              <line x1="32" y1="190" x2="28" y2="210"/>
-              <line x1="42" y1="190" x2="46" y2="210"/>
-              <line x1="42" y1="140" x2="52" y2="190"/>
-              <line x1="152" y1="88" x2="162" y2="140"/>
-              <line x1="162" y1="140" x2="168" y2="190"/>
-              <line x1="168" y1="190" x2="172" y2="210"/>
-              <line x1="158" y1="190" x2="154" y2="210"/>
-              <line x1="158" y1="140" x2="148" y2="190"/>
-              <line x1="65" y1="88" x2="60" y2="200"/>
-              <line x1="135" y1="88" x2="140" y2="200"/>
-              <line x1="60" y1="200" x2="68" y2="220"/>
-              <line x1="140" y1="200" x2="132" y2="220"/>
-              <line x1="68" y1="220" x2="66" y2="300"/>
-              <line x1="66" y1="300" x2="64" y2="370"/>
-              <line x1="88" y1="220" x2="86" y2="300"/>
-              <line x1="86" y1="300" x2="84" y2="370"/>
-              <line x1="132" y1="220" x2="134" y2="300"/>
-              <line x1="134" y1="300" x2="136" y2="370"/>
-              <line x1="112" y1="220" x2="114" y2="300"/>
-              <line x1="114" y1="300" x2="116" y2="370"/>
-              <path d="M64,370 Q60,385 52,390 Q48,392 52,398 Q60,402 80,398 Q88,394 84,370" fill="#1a1a1a" stroke="#333"/>
-              <path d="M136,370 Q140,385 148,390 Q152,392 148,398 Q140,402 120,398 Q112,394 116,370" fill="#1a1a1a" stroke="#333"/>
-              <!-- Linha da coluna (decorativa) -->
-              <line x1="100" y1="72" x2="100" y2="210" stroke="#333" stroke-dasharray="4,4"/>
-            </g>
-
-            <!-- REGIÕES CLICÁVEIS - COSTAS -->
-            <!-- Nuca -->
-            <polygon data-region="nuca" class="body-region" points="88,58 112,58 114,74 86,74"/>
-            <!-- Ombro posterior esquerdo -->
-            <polygon data-region="ombro-posterior-e" class="body-region" points="48,88 90,72 90,92 58,98"/>
-            <!-- Ombro posterior direito -->
-            <polygon data-region="ombro-posterior-d" class="body-region" points="152,88 110,72 110,92 142,98"/>
-            <!-- Costas superior -->
-            <polygon data-region="costas-superior" class="body-region" points="65,92 135,92 138,150 62,150"/>
-            <!-- Braço posterior esquerdo (tríceps) -->
-            <polygon data-region="braço-tríceps-e" class="body-region" points="38,100 58,98 52,190 32,190 38,140"/>
-            <!-- Braço posterior direito (tríceps) -->
-            <polygon data-region="braço-tríceps-d" class="body-region" points="162,100 142,98 148,190 168,190 162,140"/>
-            <!-- Costas inferior (lombar) -->
-            <polygon data-region="costas-inferior" class="body-region" points="62,150 138,150 140,210 60,210"/>
-            <!-- Antebraço posterior esquerdo -->
-            <polygon data-region="antebraço-posterior-e" class="body-region" points="32,190 52,190 46,210 28,210"/>
-            <!-- Antebraço posterior direito -->
-            <polygon data-region="antebraço-posterior-d" class="body-region" points="148,190 168,190 172,210 154,210"/>
-            <!-- Coxa posterior esquerda -->
-            <polygon data-region="coxa-posterior-e" class="body-region" points="68,220 88,220 86,300 66,300"/>
-            <!-- Coxa posterior direita -->
-            <polygon data-region="coxa-posterior-d" class="body-region" points="112,220 132,220 134,300 114,300"/>
-            <!-- Panturrilha esquerda -->
-            <polygon data-region="panturrilha-e" class="body-region" points="66,300 86,300 84,370 64,370"/>
-            <!-- Panturrilha direita -->
-            <polygon data-region="panturrilha-d" class="body-region" points="114,300 134,300 136,370 116,370"/>
-          </svg>
-        </div>
-      </div>
-
-      <!-- PAINEL DE SUGESTÃO -->
-      <div id="suggestion-panel" class="suggestion-panel hidden">
-        <button id="close-suggestion" class="close-btn" aria-label="Fechar">&times;</button>
-        <h3 id="suggestion-region" class="suggestion-title"></h3>
-        <p id="suggestion-text" class="suggestion-text"></p>
-        <a id="suggestion-whatsapp" href="#" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Quero tatuar aqui
+        <a href="#artistas"
+           class="btn-label w-full sm:w-auto px-8 py-4 rounded-full glass-card text-white hover:text-gold-400 text-sm transition-all duration-300 text-center">
+          Conhecer os Artistas
         </a>
       </div>
-    </div>
-  </section>
 
-  <!-- ========== DEPOIMENTOS ========== -->
-  <section id="depoimentos" class="section section-dark">
-    <div class="container">
-      <h2 class="section-title">O que dizem sobre <span class="text-red">nós</span></h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"[PLACEHOLDER - substituir por depoimento real]"</p>
-          <span class="testimonial-author">— [Nome do cliente]</span>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"[PLACEHOLDER - substituir por depoimento real]"</p>
-          <span class="testimonial-author">— [Nome do cliente]</span>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"[PLACEHOLDER - substituir por depoimento real]"</p>
-          <span class="testimonial-author">— [Nome do cliente]</span>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"[PLACEHOLDER - substituir por depoimento real]"</p>
-          <span class="testimonial-author">— [Nome do cliente]</span>
-        </div>
+      <!-- Localização -->
+      <div class="mt-16 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gray-400">
+        <svg class="w-4 h-4 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+        <span>Night Tattoo Body Art • Cerqueira César - SP</span>
       </div>
     </div>
   </section>
 
-  <!-- ========== LOCALIZAÇÃO ========== -->
-  <section id="localizacao" class="section">
-    <div class="container">
-      <h2 class="section-title">Onde <span class="text-red">estamos</span></h2>
-      <div class="location-grid">
-        <div class="location-info">
-          <div class="location-detail">
-            <h3>Endereço</h3>
-            <p>Centro, Cerqueira César - SP<br>CEP: 18760-000</p>
+  <!-- ============ ARTISTAS & PORTFÓLIO ============ -->
+  <section id="artistas" class="cv-auto py-20 md:py-28 bg-black border-t border-b border-white/10 relative">
+    <!-- Container mais largo no desktop para imersão -->
+    <div class="max-w-7xl 2xl:max-w-[90rem] mx-auto px-6">
+
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <h2 class="section-title text-4xl sm:text-5xl text-white mb-4">Tatuadores & Portfólio</h2>
+        <p class="text-gray-400 text-base">Conheça nossos artistas e seus trabalhos em destaque.</p>
+      </div>
+
+      <!-- Grid de Tatuadores — expandido no desktop -->
+      <div class="artists-expanded grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-12">
+
+        <!-- ===== NIGHT ===== -->
+        <div class="reveal-left glass-card rounded-2xl overflow-hidden border border-white/10 flex flex-col artist-card-inner transition-all duration-300 hover:border-gold-500/40">
+          <!-- Foto real do tatuador -->
+          <div class="artist-photo relative h-64 xl:h-72 overflow-hidden animate-float-soft" style="animation-delay:0.2s">
+            <picture>
+              <source type="image/avif" srcset="assets/night.avif">
+              <source type="image/webp" srcset="assets/night.webp">
+              <img src="Referência/Night tatuador.png" alt="Night — Tatuador da Night Tattoo"
+                   class="w-full h-full object-cover object-top" loading="eager" fetchpriority="high" decoding="async" width="1000" height="1000">
+            </picture>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/30 to-transparent"></div>
+            <div class="absolute bottom-4 left-5 right-5 z-10">
+              <h3 class="artist-name text-2xl text-white">Night</h3>
+            </div>
           </div>
-          <div class="location-detail">
-            <h3>Horário de Funcionamento</h3>
-            <p>[AJUSTAR] Seg - Sáb: XX:XX às XX:XX</p>
+          <!-- Portfólio — quadrado estrito -->
+          <div class="p-5 xl:p-7 flex flex-col flex-1">
+            <p class="text-gray-400 text-xs uppercase tracking-widest mb-4">Portfólio em destaque</p>
+            <div class="grid grid-cols-2 gap-3 xl:gap-4 portfolio-grid flex-1">
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="portfolio/night-1.thumb.avif">
+          <source type="image/webp" srcset="portfolio/night-1.thumb.webp">
+          <img src="portfolio/night-1.thumb.jpg" alt="Trabalho Night 1" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="portfolio/night-1.hd.jpg" data-hd-webp="portfolio/night-1.hd.webp" data-hd-avif="portfolio/night-1.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="portfolio/night-2.thumb.avif">
+          <source type="image/webp" srcset="portfolio/night-2.thumb.webp">
+          <img src="portfolio/night-2.thumb.jpg" alt="Trabalho Night 2" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="portfolio/night-2.hd.jpg" data-hd-webp="portfolio/night-2.hd.webp" data-hd-avif="portfolio/night-2.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="portfolio/night-3.thumb.avif">
+          <source type="image/webp" srcset="portfolio/night-3.thumb.webp">
+          <img src="portfolio/night-3.thumb.jpg" alt="Trabalho Night 3" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="portfolio/night-3.hd.jpg" data-hd-webp="portfolio/night-3.hd.webp" data-hd-avif="portfolio/night-3.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="portfolio/night-4.thumb.avif">
+          <source type="image/webp" srcset="portfolio/night-4.thumb.webp">
+          <img src="portfolio/night-4.thumb.jpg" alt="Trabalho Night 4" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="portfolio/night-4.hd.jpg" data-hd-webp="portfolio/night-4.hd.webp" data-hd-avif="portfolio/night-4.hd.avif">
+        </picture></div>
+            </div>
+            <a href="https://wa.me/5514997377444?text=Olá%20Night%20gostaria%20de%20agendar%20uma%20tatuagem"
+               target="_blank" rel="noopener noreferrer"
+               class="btn-label mt-6 w-full py-3 rounded-xl bg-gradient-to-r from-gold-500 to-gold-650 text-dark-950 text-sm hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 fill-current"><use href="#icon-whatsapp"></use></svg>
+              Agendar com Night
+            </a>
+            <a href="https://www.instagram.com/night_tattoo_oficial/"
+               target="_blank" rel="noopener noreferrer"
+               class="btn-label instagram-btn mt-3 w-full py-3 rounded-xl glass-card border border-white/15 text-gray-300 hover:text-gold-400 hover:border-gold-500/40 text-xs flex items-center justify-center gap-2 transition-all duration-300">
+              <svg class="w-4 h-4 fill-current text-gold-400"><use href="#icon-instagram"></use></svg>
+              Veja Mais Artes
+            </a>
           </div>
-          <a href="https://www.google.com/maps/place/Night+Tattoo+body+art/@-23.0372711,-49.1691708,17z" class="btn btn-red btn-lg" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Como Chegar
-          </a>
         </div>
-        <div class="location-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.6!2d-49.1691708!3d-23.0372711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAyJzE0LjIiUyA0OcKwMTAnMDkuMCJX!5e0!3m2!1spt-BR!2sbr!4v1"
-            width="100%" height="400" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"
-            title="Localização Night Tattoo Body Art">
-          </iframe>
+
+        <!-- ===== HIGOR ===== -->
+        <div class="reveal reveal-delay-1 glass-card rounded-2xl overflow-hidden border border-white/10 flex flex-col artist-card-inner transition-all duration-300 hover:border-gold-500/40">
+          <div class="artist-photo relative h-64 xl:h-72 overflow-hidden animate-float-soft" style="animation-delay:0.7s">
+            <picture>
+              <source type="image/avif" srcset="assets/higor.avif">
+              <source type="image/webp" srcset="assets/higor.webp">
+              <img src="Referência/Higor  tatuador.png" alt="Higor — Tatuador da Night Tattoo"
+                   class="w-full h-full object-cover object-top" loading="eager" fetchpriority="high" decoding="async" width="1000" height="1000">
+            </picture>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/30 to-transparent"></div>
+            <div class="absolute bottom-4 left-5 right-5 z-10">
+              <h3 class="artist-name text-2xl text-white">Higor</h3>
+            </div>
+          </div>
+          <div class="p-5 xl:p-7 flex flex-col flex-1">
+            <p class="text-gray-400 text-xs uppercase tracking-widest mb-4">Portfólio em destaque</p>
+            <div class="grid grid-cols-2 gap-3 xl:gap-4 portfolio-grid flex-1">
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="portfolio/higor-1.thumb.avif">
+          <source type="image/webp" srcset="portfolio/higor-1.thumb.webp">
+          <img src="portfolio/higor-1.thumb.jpg" alt="Trabalho Higor 1" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="portfolio/higor-1.hd.jpg" data-hd-webp="portfolio/higor-1.hd.webp" data-hd-avif="portfolio/higor-1.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="portfolio/higor-2.thumb.avif">
+          <source type="image/webp" srcset="portfolio/higor-2.thumb.webp">
+          <img src="portfolio/higor-2.thumb.jpg" alt="Trabalho Higor 2" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="portfolio/higor-2.hd.jpg" data-hd-webp="portfolio/higor-2.hd.webp" data-hd-avif="portfolio/higor-2.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="portfolio/higor-3.thumb.avif">
+          <source type="image/webp" srcset="portfolio/higor-3.thumb.webp">
+          <img src="portfolio/higor-3.thumb.jpg" alt="Trabalho Higor 3" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="portfolio/higor-3.hd.jpg" data-hd-webp="portfolio/higor-3.hd.webp" data-hd-avif="portfolio/higor-3.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="portfolio/higor-4.thumb.avif">
+          <source type="image/webp" srcset="portfolio/higor-4.thumb.webp">
+          <img src="portfolio/higor-4.thumb.jpg" alt="Trabalho Higor 4" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="portfolio/higor-4.hd.jpg" data-hd-webp="portfolio/higor-4.hd.webp" data-hd-avif="portfolio/higor-4.hd.avif">
+        </picture></div>
+            </div>
+            <a href="https://wa.me/5514996042781?text=Olá%20Higor%20gostaria%20de%20agendar%20uma%20tatuagem"
+               target="_blank" rel="noopener noreferrer"
+               class="btn-label mt-6 w-full py-3 rounded-xl bg-gradient-to-r from-gold-500 to-gold-650 text-dark-950 text-sm hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 fill-current"><use href="#icon-whatsapp"></use></svg>
+              Agendar com Higor
+            </a>
+            <a href="https://www.instagram.com/higor.alexssander/"
+               target="_blank" rel="noopener noreferrer"
+               class="btn-label instagram-btn mt-3 w-full py-3 rounded-xl glass-card border border-white/15 text-gray-300 hover:text-gold-400 hover:border-gold-500/40 text-xs flex items-center justify-center gap-2 transition-all duration-300">
+              <svg class="w-4 h-4 fill-current text-gold-400"><use href="#icon-instagram"></use></svg>
+              Veja Mais Artes
+            </a>
+          </div>
         </div>
+
+        <!-- ===== EDSON ===== -->
+        <div class="reveal-right reveal-delay-2 glass-card rounded-2xl overflow-hidden border border-white/10 flex flex-col artist-card-inner transition-all duration-300 hover:border-gold-500/40">
+          <div class="artist-photo relative h-64 xl:h-72 overflow-hidden animate-float-soft" style="animation-delay:1.2s">
+            <picture>
+              <source type="image/avif" srcset="assets/edson.avif">
+              <source type="image/webp" srcset="assets/edson.webp">
+              <img src="Referência/Edson tatuador.png" alt="Edson — Tatuador da Night Tattoo"
+                   class="w-full h-full object-cover object-top" loading="eager" fetchpriority="high" decoding="async" width="1000" height="1000">
+            </picture>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/30 to-transparent"></div>
+            <div class="absolute bottom-4 left-5 right-5 z-10">
+              <h3 class="artist-name text-2xl text-white">Edson</h3>
+            </div>
+          </div>
+          <div class="p-5 xl:p-7 flex flex-col flex-1">
+            <p class="text-gray-400 text-xs uppercase tracking-widest mb-4">Portfólio em destaque</p>
+            <div class="grid grid-cols-2 gap-3 xl:gap-4 portfolio-grid flex-1">
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="portfolio/edson-1.thumb.avif">
+          <source type="image/webp" srcset="portfolio/edson-1.thumb.webp">
+          <img src="portfolio/edson-1.thumb.jpg" alt="Trabalho Edson 1" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="portfolio/edson-1.hd.jpg" data-hd-webp="portfolio/edson-1.hd.webp" data-hd-avif="portfolio/edson-1.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="portfolio/edson-2.thumb.avif">
+          <source type="image/webp" srcset="portfolio/edson-2.thumb.webp">
+          <img src="portfolio/edson-2.thumb.jpg" alt="Trabalho Edson 2" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="portfolio/edson-2.hd.jpg" data-hd-webp="portfolio/edson-2.hd.webp" data-hd-avif="portfolio/edson-2.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="portfolio/edson-3.thumb.avif">
+          <source type="image/webp" srcset="portfolio/edson-3.thumb.webp">
+          <img src="portfolio/edson-3.thumb.jpg" alt="Trabalho Edson 3" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="portfolio/edson-3.hd.jpg" data-hd-webp="portfolio/edson-3.hd.webp" data-hd-avif="portfolio/edson-3.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="portfolio/edson-4.thumb.avif">
+          <source type="image/webp" srcset="portfolio/edson-4.thumb.webp">
+          <img src="portfolio/edson-4.thumb.jpg" alt="Trabalho Edson 4" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="portfolio/edson-4.hd.jpg" data-hd-webp="portfolio/edson-4.hd.webp" data-hd-avif="portfolio/edson-4.hd.avif">
+        </picture></div>
+            </div>
+            <a href="https://wa.me/5514996200643?text=Olá%20Edson%20gostaria%20de%20agendar%20uma%20tatuagem"
+               target="_blank" rel="noopener noreferrer"
+               class="btn-label mt-6 w-full py-3 rounded-xl bg-gradient-to-r from-gold-500 to-gold-650 text-dark-950 text-sm hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 fill-current"><use href="#icon-whatsapp"></use></svg>
+              Agendar com Edson
+            </a>
+            <a href="https://www.instagram.com/edson_s.tattoo/"
+               target="_blank" rel="noopener noreferrer"
+               class="btn-label instagram-btn mt-3 w-full py-3 rounded-xl glass-card border border-white/15 text-gray-300 hover:text-gold-400 hover:border-gold-500/40 text-xs flex items-center justify-center gap-2 transition-all duration-300">
+              <svg class="w-4 h-4 fill-current text-gold-400"><use href="#icon-instagram"></use></svg>
+              Veja Mais Artes
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ORÇAMENTO & AGENDAMENTO SIMPLIFICADO ============ -->
+  <section id="orcamento" class="cv-auto py-20 md:py-28 bg-black border-t border-white/10 relative">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="eyebrow text-gold-400 block mb-4 reveal">◆ Agendamento</span>
+      <h2 class="section-title text-4xl sm:text-5xl text-white mb-6 reveal">Agendar por WhatsApp</h2>
+      <p class="text-gray-300 text-base md:text-lg mb-10 max-w-2xl mx-auto font-light reveal">
+        Escolha seu tatuador, informe seu nome e conte sua ideia. Sua solicitação vai direto para o artista.
+      </p>
+
+      <div class="reveal reveal-delay-1 glass-card p-8 sm:p-10 rounded-3xl border border-gold-500/20 shadow-2xl max-w-2xl mx-auto text-left">
+
+        <form id="orcamento-form">
+
+          <!-- 1. Escolha do Tatuador -->
+          <div class="mb-8">
+            <label class="block text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">1 — Escolha o Tatuador</label>
+            <div class="grid grid-cols-3 gap-4">
+              <label class="artist-option-card glass-card rounded-xl p-4 text-center border border-white/10 cursor-pointer transition-all duration-300 hover:border-gold-500/30" data-artist="Night">
+                <input type="radio" name="artista" value="Night" class="hidden">
+                <div class="artist-radio-dot w-4 h-4 rounded-full border-2 border-gray-500 mx-auto mb-3"></div>
+                <span class="font-display text-xl font-bold text-white block">Night</span>
+                <span class="text-[11px] text-gray-400 uppercase tracking-wider">Tatuador</span>
+              </label>
+              <label class="artist-option-card glass-card rounded-xl p-4 text-center border border-white/10 cursor-pointer transition-all duration-300 hover:border-gold-500/30" data-artist="Higor">
+                <input type="radio" name="artista" value="Higor" class="hidden">
+                <div class="artist-radio-dot w-4 h-4 rounded-full border-2 border-gray-500 mx-auto mb-3"></div>
+                <span class="font-display text-xl font-bold text-white block">Higor</span>
+                <span class="text-[11px] text-gray-400 uppercase tracking-wider">Tatuador</span>
+              </label>
+              <label class="artist-option-card glass-card rounded-xl p-4 text-center border border-white/10 cursor-pointer transition-all duration-300 hover:border-gold-500/30" data-artist="Edson">
+                <input type="radio" name="artista" value="Edson" class="hidden">
+                <div class="artist-radio-dot w-4 h-4 rounded-full border-2 border-gray-500 mx-auto mb-3"></div>
+                <span class="font-display text-xl font-bold text-white block">Edson</span>
+                <span class="text-[11px] text-gray-400 uppercase tracking-wider">Tatuador</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 2. Nome -->
+          <div class="mb-8">
+            <label class="block text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">2 — Seu Nome</label>
+            <div>
+              <input type="text" id="nome" placeholder="Seu nome completo" autocomplete="name"
+                     class="w-full px-4 py-3 rounded-xl bg-dark-900 border border-white/10 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-gold-500/50 transition-colors">
+            </div>
+          </div>
+
+          <!-- 3. Textarea da Ideia -->
+          <div class="mb-8">
+            <label class="block text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">3 — Sua Ideia</label>
+            <div>
+              <textarea id="descricao" rows="4" placeholder="Descreva a sua ideia (opcional)"
+                        class="w-full px-4 py-3 rounded-xl bg-dark-900 border border-white/10 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-gold-500/50 transition-colors resize-none"></textarea>
+            </div>
+          </div>
+
+          <!-- Botão de Envio -->
+          <button type="submit" id="submit-btn"
+                  class="btn-label w-full py-4 rounded-full bg-gradient-to-r from-gold-500 via-gold-400 to-gold-650 text-dark-950 text-base shadow-xl shadow-gold-500/30 hover:shadow-gold-500/50 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3">
+            <svg class="w-5 h-5 fill-current"><use href="#icon-whatsapp"></use></svg>
+            Agendar por WhatsApp
+          </button>
+
+        </form>
+
+        <!-- Mensagem de Sucesso -->
+        <div id="form-success" class="hidden text-center py-12">
+          <div class="text-5xl mb-4" aria-hidden="true">✓</div>
+          <h3 class="font-display text-2xl font-bold text-white mb-3">Solicitação Enviada!</h3>
+          <p class="text-gray-400 text-sm mb-6">Você será redirecionado para o WhatsApp do tatuador escolhido.</p>
+          <button id="new-request" class="btn-label px-6 py-3 rounded-full glass-card text-gold-400 text-sm border border-gold-500/30 hover:bg-gold-500/10 transition-colors">
+            Enviar Nova Solicitação
+          </button>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ========== CTA FINAL ========== -->
-  <section id="cta" class="cta-section">
-    <div class="container">
-      <h2 class="cta-title">Pronto pra sua <span class="text-red">próxima tatuagem</span>?</h2>
-      <p class="cta-sub">Agende sua consulta e transforme sua ideia em arte.</p>
-      <a href="https://wa.me/5514997377444?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20no%20Night%20Tattoo." class="btn btn-whatsapp btn-xl" target="_blank" rel="noopener">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Falar no WhatsApp
-      </a>
+  <!-- ============ INSPIRAÇÕES ============ -->
+  <section id="inspiracoes" class="cv-auto py-20 md:py-28 bg-black border-t border-white/10 relative">
+    <div class="max-w-7xl 2xl:max-w-[90rem] mx-auto px-6">
+
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="eyebrow text-gold-400 block mb-4">◆ Inspirações</span>
+        <h2 class="section-title text-4xl sm:text-5xl text-white mb-4">Encontre sua próxima tattoo</h2>
+        <p class="text-gray-400 text-base">Referências organizadas por parte do corpo, separadas entre inspirações masculinas e femininas.</p>
+      </div>
+
+      <!-- ================= BRAÇO ================= -->
+      <div class="mb-14 md:mb-20 reveal-left">
+        <div class="flex items-center justify-center gap-4 mb-8">
+          <span class="h-px w-10 bg-gold-500/40"></span>
+          <h3 class="section-title text-2xl sm:text-3xl text-white">Braço</h3>
+          <span class="h-px w-10 bg-gold-500/40"></span>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12">
+          <div class="animate-float-soft" style="animation-delay:0.3s">
+            <div class="flex items-center gap-3 mb-4">
+              <svg class="w-4 h-4 text-gold-400 shrink-0"><use href="#icon-male"></use></svg>
+              <span class="eyebrow text-gold-400">Homem</span>
+              <span class="h-px flex-1 bg-white/10"></span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 md:gap-4">
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/braco/h-1.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/braco/h-1.thumb.webp">
+          <img src="inspiracoes/braco/h-1.thumb.jpg" alt="Tatuagem masculina de braço — inspiração 1" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="inspiracoes/braco/h-1.hd.jpg" data-hd-webp="inspiracoes/braco/h-1.hd.webp" data-hd-avif="inspiracoes/braco/h-1.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/braco/h-2.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/braco/h-2.thumb.webp">
+          <img src="inspiracoes/braco/h-2.thumb.jpg" alt="Tatuagem masculina de braço — inspiração 2" class="portfolio-img" loading="eager" decoding="async" width="512" height="512" data-hd="inspiracoes/braco/h-2.hd.jpg" data-hd-webp="inspiracoes/braco/h-2.hd.webp" data-hd-avif="inspiracoes/braco/h-2.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/braco/h-3.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/braco/h-3.thumb.webp">
+          <img src="inspiracoes/braco/h-3.thumb.jpg" alt="Tatuagem masculina de braço — inspiração 3" class="portfolio-img" loading="eager" decoding="async" width="512" height="512" data-hd="inspiracoes/braco/h-3.hd.jpg" data-hd-webp="inspiracoes/braco/h-3.hd.webp" data-hd-avif="inspiracoes/braco/h-3.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/braco/h-4.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/braco/h-4.thumb.webp">
+          <img src="inspiracoes/braco/h-4.thumb.jpg" alt="Tatuagem masculina de braço — inspiração 4" class="portfolio-img" loading="eager" decoding="async" width="512" height="512" data-hd="inspiracoes/braco/h-4.hd.jpg" data-hd-webp="inspiracoes/braco/h-4.hd.webp" data-hd-avif="inspiracoes/braco/h-4.hd.avif">
+        </picture></div>
+            </div>
+          </div>
+          <div class="animate-float-soft" style="animation-delay:0.9s">
+            <div class="flex items-center gap-3 mb-4">
+              <svg class="w-4 h-4 text-gold-400 shrink-0"><use href="#icon-female"></use></svg>
+              <span class="eyebrow text-gold-400">Mulher</span>
+              <span class="h-px flex-1 bg-white/10"></span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 md:gap-4">
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/braco/m-1.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/braco/m-1.thumb.webp">
+          <img src="inspiracoes/braco/m-1.thumb.jpg" alt="Tatuagem feminina de braço — inspiração 1" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="inspiracoes/braco/m-1.hd.jpg" data-hd-webp="inspiracoes/braco/m-1.hd.webp" data-hd-avif="inspiracoes/braco/m-1.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/braco/m-2.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/braco/m-2.thumb.webp">
+          <img src="inspiracoes/braco/m-2.thumb.jpg" alt="Tatuagem feminina de braço — inspiração 2" class="portfolio-img" loading="eager" decoding="async" width="512" height="512" data-hd="inspiracoes/braco/m-2.hd.jpg" data-hd-webp="inspiracoes/braco/m-2.hd.webp" data-hd-avif="inspiracoes/braco/m-2.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/braco/m-3.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/braco/m-3.thumb.webp">
+          <img src="inspiracoes/braco/m-3.thumb.jpg" alt="Tatuagem feminina de braço — inspiração 3" class="portfolio-img" loading="eager" decoding="async" width="512" height="512" data-hd="inspiracoes/braco/m-3.hd.jpg" data-hd-webp="inspiracoes/braco/m-3.hd.webp" data-hd-avif="inspiracoes/braco/m-3.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/braco/m-4.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/braco/m-4.thumb.webp">
+          <img src="inspiracoes/braco/m-4.thumb.jpg" alt="Tatuagem feminina de braço — inspiração 4" class="portfolio-img" loading="eager" decoding="async" width="512" height="512" data-hd="inspiracoes/braco/m-4.hd.jpg" data-hd-webp="inspiracoes/braco/m-4.hd.webp" data-hd-avif="inspiracoes/braco/m-4.hd.avif">
+        </picture></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= ANTEBRAÇO ================= -->
+      <div class="mb-14 md:mb-20 reveal-right">
+        <div class="flex items-center justify-center gap-4 mb-8">
+          <span class="h-px w-10 bg-gold-500/40"></span>
+          <h3 class="section-title text-2xl sm:text-3xl text-white">Antebraço</h3>
+          <span class="h-px w-10 bg-gold-500/40"></span>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12">
+          <div class="animate-float-soft" style="animation-delay:0.3s">
+            <div class="flex items-center gap-3 mb-4">
+              <svg class="w-4 h-4 text-gold-400 shrink-0"><use href="#icon-male"></use></svg>
+              <span class="eyebrow text-gold-400">Homem</span>
+              <span class="h-px flex-1 bg-white/10"></span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 md:gap-4">
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/antebraco/h-1.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/antebraco/h-1.thumb.webp">
+          <img src="inspiracoes/antebraco/h-1.thumb.jpg" alt="Tatuagem masculina de antebraço — inspiração 1" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="inspiracoes/antebraco/h-1.hd.jpg" data-hd-webp="inspiracoes/antebraco/h-1.hd.webp" data-hd-avif="inspiracoes/antebraco/h-1.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/antebraco/h-2.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/antebraco/h-2.thumb.webp">
+          <img src="inspiracoes/antebraco/h-2.thumb.jpg" alt="Tatuagem masculina de antebraço — inspiração 2" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/antebraco/h-2.hd.jpg" data-hd-webp="inspiracoes/antebraco/h-2.hd.webp" data-hd-avif="inspiracoes/antebraco/h-2.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/antebraco/h-3.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/antebraco/h-3.thumb.webp">
+          <img src="inspiracoes/antebraco/h-3.thumb.jpg" alt="Tatuagem masculina de antebraço — inspiração 3" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/antebraco/h-3.hd.jpg" data-hd-webp="inspiracoes/antebraco/h-3.hd.webp" data-hd-avif="inspiracoes/antebraco/h-3.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/antebraco/h-4.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/antebraco/h-4.thumb.webp">
+          <img src="inspiracoes/antebraco/h-4.thumb.jpg" alt="Tatuagem masculina de antebraço — inspiração 4" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/antebraco/h-4.hd.jpg" data-hd-webp="inspiracoes/antebraco/h-4.hd.webp" data-hd-avif="inspiracoes/antebraco/h-4.hd.avif">
+        </picture></div>
+            </div>
+          </div>
+          <div class="animate-float-soft" style="animation-delay:0.9s">
+            <div class="flex items-center gap-3 mb-4">
+              <svg class="w-4 h-4 text-gold-400 shrink-0"><use href="#icon-female"></use></svg>
+              <span class="eyebrow text-gold-400">Mulher</span>
+              <span class="h-px flex-1 bg-white/10"></span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 md:gap-4">
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/antebraco/m-1.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/antebraco/m-1.thumb.webp">
+          <img src="inspiracoes/antebraco/m-1.thumb.jpg" alt="Tatuagem feminina de antebraço — inspiração 1" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="inspiracoes/antebraco/m-1.hd.jpg" data-hd-webp="inspiracoes/antebraco/m-1.hd.webp" data-hd-avif="inspiracoes/antebraco/m-1.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/antebraco/m-2.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/antebraco/m-2.thumb.webp">
+          <img src="inspiracoes/antebraco/m-2.thumb.jpg" alt="Tatuagem feminina de antebraço — inspiração 2" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/antebraco/m-2.hd.jpg" data-hd-webp="inspiracoes/antebraco/m-2.hd.webp" data-hd-avif="inspiracoes/antebraco/m-2.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/antebraco/m-3.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/antebraco/m-3.thumb.webp">
+          <img src="inspiracoes/antebraco/m-3.thumb.jpg" alt="Tatuagem feminina de antebraço — inspiração 3" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/antebraco/m-3.hd.jpg" data-hd-webp="inspiracoes/antebraco/m-3.hd.webp" data-hd-avif="inspiracoes/antebraco/m-3.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/antebraco/m-4.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/antebraco/m-4.thumb.webp">
+          <img src="inspiracoes/antebraco/m-4.thumb.jpg" alt="Tatuagem feminina de antebraço — inspiração 4" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/antebraco/m-4.hd.jpg" data-hd-webp="inspiracoes/antebraco/m-4.hd.webp" data-hd-avif="inspiracoes/antebraco/m-4.hd.avif">
+        </picture></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= PESCOÇO ================= -->
+      <div class="mb-14 md:mb-20 reveal-left">
+        <div class="flex items-center justify-center gap-4 mb-8">
+          <span class="h-px w-10 bg-gold-500/40"></span>
+          <h3 class="section-title text-2xl sm:text-3xl text-white">Pescoço</h3>
+          <span class="h-px w-10 bg-gold-500/40"></span>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12">
+          <div class="animate-float-soft" style="animation-delay:0.3s">
+            <div class="flex items-center gap-3 mb-4">
+              <svg class="w-4 h-4 text-gold-400 shrink-0"><use href="#icon-male"></use></svg>
+              <span class="eyebrow text-gold-400">Homem</span>
+              <span class="h-px flex-1 bg-white/10"></span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 md:gap-4">
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/pescoco/h-1.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/pescoco/h-1.thumb.webp">
+          <img src="inspiracoes/pescoco/h-1.thumb.jpg" alt="Tatuagem masculina de pescoço — inspiração 1" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="inspiracoes/pescoco/h-1.hd.jpg" data-hd-webp="inspiracoes/pescoco/h-1.hd.webp" data-hd-avif="inspiracoes/pescoco/h-1.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/pescoco/h-2.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/pescoco/h-2.thumb.webp">
+          <img src="inspiracoes/pescoco/h-2.thumb.jpg" alt="Tatuagem masculina de pescoço — inspiração 2" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/pescoco/h-2.hd.jpg" data-hd-webp="inspiracoes/pescoco/h-2.hd.webp" data-hd-avif="inspiracoes/pescoco/h-2.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/pescoco/h-3.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/pescoco/h-3.thumb.webp">
+          <img src="inspiracoes/pescoco/h-3.thumb.jpg" alt="Tatuagem masculina de pescoço — inspiração 3" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/pescoco/h-3.hd.jpg" data-hd-webp="inspiracoes/pescoco/h-3.hd.webp" data-hd-avif="inspiracoes/pescoco/h-3.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/pescoco/h-4.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/pescoco/h-4.thumb.webp">
+          <img src="inspiracoes/pescoco/h-4.thumb.jpg" alt="Tatuagem masculina de pescoço — inspiração 4" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/pescoco/h-4.hd.jpg" data-hd-webp="inspiracoes/pescoco/h-4.hd.webp" data-hd-avif="inspiracoes/pescoco/h-4.hd.avif">
+        </picture></div>
+            </div>
+          </div>
+          <div class="animate-float-soft" style="animation-delay:0.9s">
+            <div class="flex items-center gap-3 mb-4">
+              <svg class="w-4 h-4 text-gold-400 shrink-0"><use href="#icon-female"></use></svg>
+              <span class="eyebrow text-gold-400">Mulher</span>
+              <span class="h-px flex-1 bg-white/10"></span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 md:gap-4">
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/pescoco/m-1.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/pescoco/m-1.thumb.webp">
+          <img src="inspiracoes/pescoco/m-1.thumb.jpg" alt="Tatuagem feminina de pescoço — inspiração 1" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="inspiracoes/pescoco/m-1.hd.jpg" data-hd-webp="inspiracoes/pescoco/m-1.hd.webp" data-hd-avif="inspiracoes/pescoco/m-1.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/pescoco/m-2.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/pescoco/m-2.thumb.webp">
+          <img src="inspiracoes/pescoco/m-2.thumb.jpg" alt="Tatuagem feminina de pescoço — inspiração 2" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/pescoco/m-2.hd.jpg" data-hd-webp="inspiracoes/pescoco/m-2.hd.webp" data-hd-avif="inspiracoes/pescoco/m-2.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/pescoco/m-3.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/pescoco/m-3.thumb.webp">
+          <img src="inspiracoes/pescoco/m-3.thumb.jpg" alt="Tatuagem feminina de pescoço — inspiração 3" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/pescoco/m-3.hd.jpg" data-hd-webp="inspiracoes/pescoco/m-3.hd.webp" data-hd-avif="inspiracoes/pescoco/m-3.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/pescoco/m-4.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/pescoco/m-4.thumb.webp">
+          <img src="inspiracoes/pescoco/m-4.thumb.jpg" alt="Tatuagem feminina de pescoço — inspiração 4" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/pescoco/m-4.hd.jpg" data-hd-webp="inspiracoes/pescoco/m-4.hd.webp" data-hd-avif="inspiracoes/pescoco/m-4.hd.avif">
+        </picture></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= COSTAS ================= -->
+      <div class="mb-14 md:mb-20 reveal-right">
+        <div class="flex items-center justify-center gap-4 mb-8">
+          <span class="h-px w-10 bg-gold-500/40"></span>
+          <h3 class="section-title text-2xl sm:text-3xl text-white">Costas</h3>
+          <span class="h-px w-10 bg-gold-500/40"></span>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12">
+          <div class="animate-float-soft" style="animation-delay:0.3s">
+            <div class="flex items-center gap-3 mb-4">
+              <svg class="w-4 h-4 text-gold-400 shrink-0"><use href="#icon-male"></use></svg>
+              <span class="eyebrow text-gold-400">Homem</span>
+              <span class="h-px flex-1 bg-white/10"></span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 md:gap-4">
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/costas/h-1.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/costas/h-1.thumb.webp">
+          <img src="inspiracoes/costas/h-1.thumb.jpg" alt="Tatuagem masculina de costas — inspiração 1" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="inspiracoes/costas/h-1.hd.jpg" data-hd-webp="inspiracoes/costas/h-1.hd.webp" data-hd-avif="inspiracoes/costas/h-1.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/costas/h-2.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/costas/h-2.thumb.webp">
+          <img src="inspiracoes/costas/h-2.thumb.jpg" alt="Tatuagem masculina de costas — inspiração 2" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/costas/h-2.hd.jpg" data-hd-webp="inspiracoes/costas/h-2.hd.webp" data-hd-avif="inspiracoes/costas/h-2.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/costas/h-3.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/costas/h-3.thumb.webp">
+          <img src="inspiracoes/costas/h-3.thumb.jpg" alt="Tatuagem masculina de costas — inspiração 3" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/costas/h-3.hd.jpg" data-hd-webp="inspiracoes/costas/h-3.hd.webp" data-hd-avif="inspiracoes/costas/h-3.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/costas/h-4.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/costas/h-4.thumb.webp">
+          <img src="inspiracoes/costas/h-4.thumb.jpg" alt="Tatuagem masculina de costas — inspiração 4" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/costas/h-4.hd.jpg" data-hd-webp="inspiracoes/costas/h-4.hd.webp" data-hd-avif="inspiracoes/costas/h-4.hd.avif">
+        </picture></div>
+            </div>
+          </div>
+          <div class="animate-float-soft" style="animation-delay:0.9s">
+            <div class="flex items-center gap-3 mb-4">
+              <svg class="w-4 h-4 text-gold-400 shrink-0"><use href="#icon-female"></use></svg>
+              <span class="eyebrow text-gold-400">Mulher</span>
+              <span class="h-px flex-1 bg-white/10"></span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 md:gap-4">
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/costas/m-1.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/costas/m-1.thumb.webp">
+          <img src="inspiracoes/costas/m-1.thumb.jpg" alt="Tatuagem feminina de costas — inspiração 1" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="inspiracoes/costas/m-1.hd.jpg" data-hd-webp="inspiracoes/costas/m-1.hd.webp" data-hd-avif="inspiracoes/costas/m-1.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/costas/m-2.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/costas/m-2.thumb.webp">
+          <img src="inspiracoes/costas/m-2.thumb.jpg" alt="Tatuagem feminina de costas — inspiração 2" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/costas/m-2.hd.jpg" data-hd-webp="inspiracoes/costas/m-2.hd.webp" data-hd-avif="inspiracoes/costas/m-2.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/costas/m-3.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/costas/m-3.thumb.webp">
+          <img src="inspiracoes/costas/m-3.thumb.jpg" alt="Tatuagem feminina de costas — inspiração 3" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/costas/m-3.hd.jpg" data-hd-webp="inspiracoes/costas/m-3.hd.webp" data-hd-avif="inspiracoes/costas/m-3.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/costas/m-4.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/costas/m-4.thumb.webp">
+          <img src="inspiracoes/costas/m-4.thumb.jpg" alt="Tatuagem feminina de costas — inspiração 4" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/costas/m-4.hd.jpg" data-hd-webp="inspiracoes/costas/m-4.hd.webp" data-hd-avif="inspiracoes/costas/m-4.hd.avif">
+        </picture></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= COXA ================= -->
+      <div class="mb-14 md:mb-20 reveal-left">
+        <div class="flex items-center justify-center gap-4 mb-8">
+          <span class="h-px w-10 bg-gold-500/40"></span>
+          <h3 class="section-title text-2xl sm:text-3xl text-white">Coxa</h3>
+          <span class="h-px w-10 bg-gold-500/40"></span>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12">
+          <div class="animate-float-soft" style="animation-delay:0.3s">
+            <div class="flex items-center gap-3 mb-4">
+              <svg class="w-4 h-4 text-gold-400 shrink-0"><use href="#icon-male"></use></svg>
+              <span class="eyebrow text-gold-400">Homem</span>
+              <span class="h-px flex-1 bg-white/10"></span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 md:gap-4">
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/coxa/h-1.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/coxa/h-1.thumb.webp">
+          <img src="inspiracoes/coxa/h-1.thumb.jpg" alt="Tatuagem masculina de coxa — inspiração 1" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="inspiracoes/coxa/h-1.hd.jpg" data-hd-webp="inspiracoes/coxa/h-1.hd.webp" data-hd-avif="inspiracoes/coxa/h-1.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/coxa/h-2.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/coxa/h-2.thumb.webp">
+          <img src="inspiracoes/coxa/h-2.thumb.jpg" alt="Tatuagem masculina de coxa — inspiração 2" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/coxa/h-2.hd.jpg" data-hd-webp="inspiracoes/coxa/h-2.hd.webp" data-hd-avif="inspiracoes/coxa/h-2.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/coxa/h-3.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/coxa/h-3.thumb.webp">
+          <img src="inspiracoes/coxa/h-3.thumb.jpg" alt="Tatuagem masculina de coxa — inspiração 3" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/coxa/h-3.hd.jpg" data-hd-webp="inspiracoes/coxa/h-3.hd.webp" data-hd-avif="inspiracoes/coxa/h-3.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/coxa/h-4.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/coxa/h-4.thumb.webp">
+          <img src="inspiracoes/coxa/h-4.thumb.jpg" alt="Tatuagem masculina de coxa — inspiração 4" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/coxa/h-4.hd.jpg" data-hd-webp="inspiracoes/coxa/h-4.hd.webp" data-hd-avif="inspiracoes/coxa/h-4.hd.avif">
+        </picture></div>
+            </div>
+          </div>
+          <div class="animate-float-soft" style="animation-delay:0.9s">
+            <div class="flex items-center gap-3 mb-4">
+              <svg class="w-4 h-4 text-gold-400 shrink-0"><use href="#icon-female"></use></svg>
+              <span class="eyebrow text-gold-400">Mulher</span>
+              <span class="h-px flex-1 bg-white/10"></span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 md:gap-4">
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/coxa/m-1.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/coxa/m-1.thumb.webp">
+          <img src="inspiracoes/coxa/m-1.thumb.jpg" alt="Tatuagem feminina de coxa — inspiração 1" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="inspiracoes/coxa/m-1.hd.jpg" data-hd-webp="inspiracoes/coxa/m-1.hd.webp" data-hd-avif="inspiracoes/coxa/m-1.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/coxa/m-2.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/coxa/m-2.thumb.webp">
+          <img src="inspiracoes/coxa/m-2.thumb.jpg" alt="Tatuagem feminina de coxa — inspiração 2" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/coxa/m-2.hd.jpg" data-hd-webp="inspiracoes/coxa/m-2.hd.webp" data-hd-avif="inspiracoes/coxa/m-2.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/coxa/m-3.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/coxa/m-3.thumb.webp">
+          <img src="inspiracoes/coxa/m-3.thumb.jpg" alt="Tatuagem feminina de coxa — inspiração 3" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/coxa/m-3.hd.jpg" data-hd-webp="inspiracoes/coxa/m-3.hd.webp" data-hd-avif="inspiracoes/coxa/m-3.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/coxa/m-4.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/coxa/m-4.thumb.webp">
+          <img src="inspiracoes/coxa/m-4.thumb.jpg" alt="Tatuagem feminina de coxa — inspiração 4" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/coxa/m-4.hd.jpg" data-hd-webp="inspiracoes/coxa/m-4.hd.webp" data-hd-avif="inspiracoes/coxa/m-4.hd.avif">
+        </picture></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= CANELA ================= -->
+      <div class="mb-6 md:mb-10 reveal-right">
+        <div class="flex items-center justify-center gap-4 mb-8">
+          <span class="h-px w-10 bg-gold-500/40"></span>
+          <h3 class="section-title text-2xl sm:text-3xl text-white">Canela</h3>
+          <span class="h-px w-10 bg-gold-500/40"></span>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12">
+          <div class="animate-float-soft" style="animation-delay:0.3s">
+            <div class="flex items-center gap-3 mb-4">
+              <svg class="w-4 h-4 text-gold-400 shrink-0"><use href="#icon-male"></use></svg>
+              <span class="eyebrow text-gold-400">Homem</span>
+              <span class="h-px flex-1 bg-white/10"></span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 md:gap-4">
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/canela/h-1.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/canela/h-1.thumb.webp">
+          <img src="inspiracoes/canela/h-1.thumb.jpg" alt="Tatuagem masculina de canela — inspiração 1" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="inspiracoes/canela/h-1.hd.jpg" data-hd-webp="inspiracoes/canela/h-1.hd.webp" data-hd-avif="inspiracoes/canela/h-1.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/canela/h-2.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/canela/h-2.thumb.webp">
+          <img src="inspiracoes/canela/h-2.thumb.jpg" alt="Tatuagem masculina de canela — inspiração 2" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/canela/h-2.hd.jpg" data-hd-webp="inspiracoes/canela/h-2.hd.webp" data-hd-avif="inspiracoes/canela/h-2.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/canela/h-3.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/canela/h-3.thumb.webp">
+          <img src="inspiracoes/canela/h-3.thumb.jpg" alt="Tatuagem masculina de canela — inspiração 3" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/canela/h-3.hd.jpg" data-hd-webp="inspiracoes/canela/h-3.hd.webp" data-hd-avif="inspiracoes/canela/h-3.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/canela/h-4.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/canela/h-4.thumb.webp">
+          <img src="inspiracoes/canela/h-4.thumb.jpg" alt="Tatuagem masculina de canela — inspiração 4" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/canela/h-4.hd.jpg" data-hd-webp="inspiracoes/canela/h-4.hd.webp" data-hd-avif="inspiracoes/canela/h-4.hd.avif">
+        </picture></div>
+            </div>
+          </div>
+          <div class="animate-float-soft" style="animation-delay:0.9s">
+            <div class="flex items-center gap-3 mb-4">
+              <svg class="w-4 h-4 text-gold-400 shrink-0"><use href="#icon-female"></use></svg>
+              <span class="eyebrow text-gold-400">Mulher</span>
+              <span class="h-px flex-1 bg-white/10"></span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 md:gap-4">
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/canela/m-1.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/canela/m-1.thumb.webp">
+          <img src="inspiracoes/canela/m-1.thumb.jpg" alt="Tatuagem feminina de canela — inspiração 1" class="portfolio-img" loading="eager" fetchpriority="high" decoding="async" width="512" height="512" data-hd="inspiracoes/canela/m-1.hd.jpg" data-hd-webp="inspiracoes/canela/m-1.hd.webp" data-hd-avif="inspiracoes/canela/m-1.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/canela/m-2.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/canela/m-2.thumb.webp">
+          <img src="inspiracoes/canela/m-2.thumb.jpg" alt="Tatuagem feminina de canela — inspiração 2" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/canela/m-2.hd.jpg" data-hd-webp="inspiracoes/canela/m-2.hd.webp" data-hd-avif="inspiracoes/canela/m-2.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/canela/m-3.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/canela/m-3.thumb.webp">
+          <img src="inspiracoes/canela/m-3.thumb.jpg" alt="Tatuagem feminina de canela — inspiração 3" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/canela/m-3.hd.jpg" data-hd-webp="inspiracoes/canela/m-3.hd.webp" data-hd-avif="inspiracoes/canela/m-3.hd.avif">
+        </picture></div>
+              <div class="portfolio-square reveal">
+<picture>
+          <source type="image/avif" srcset="inspiracoes/canela/m-4.thumb.avif">
+          <source type="image/webp" srcset="inspiracoes/canela/m-4.thumb.webp">
+          <img src="inspiracoes/canela/m-4.thumb.jpg" alt="Tatuagem feminina de canela — inspiração 4" class="portfolio-img" loading="lazy" decoding="async" width="512" height="512" data-hd="inspiracoes/canela/m-4.hd.jpg" data-hd-webp="inspiracoes/canela/m-4.hd.webp" data-hd-avif="inspiracoes/canela/m-4.hd.avif">
+        </picture></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="/logo.png" alt="Night Tattoo Body Art" width="64" height="64" class="footer-logo">
-          <p class="footer-address">Centro, Cerqueira César - SP<br>CEP: 18760-000</p>
-        </div>
-        <div class="footer-contacts">
-          <h4>Contatos</h4>
-          <a href="https://wa.me/5514997377444" target="_blank" rel="noopener">Night — (14) 99737-7444</a>
-          <a href="https://wa.me/5514996042781" target="_blank" rel="noopener">Higor — (14) 99604-2781</a>
-          <a href="https://wa.me/5514996200643" target="_blank" rel="noopener">Edson — (14) 99620-0643</a>
-        </div>
-        <div class="footer-nav">
-          <h4>Navegação</h4>
-          <a href="#tatuadores">Tatuadores</a>
-          <a href="#escolha-sua-tattoo">Escolha sua Tattoo</a>
-          <a href="#localizacao">Localização</a>
-        </div>
+  <!-- FOOTER -->
+  <footer class="cv-auto bg-black border-t border-white/10 py-12 text-gray-400 text-sm">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div>
+        <span class="font-display text-xl font-bold text-white tracking-wider block mb-1">NIGHT TATTOO BODY ART</span>
+        <p class="text-xs text-gray-500">Cerqueira César - SP • Todos os direitos reservados.</p>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Night Tattoo Body Art. Todos os direitos reservados.</p>
+      <div class="flex items-center space-x-6 text-xs uppercase tracking-widest">
+        <a href="https://www.instagram.com/nighttattoo.bodyart/" target="_blank" rel="noopener noreferrer" class="hover:text-gold-400 transition-colors">Instagram</a>
+        <a href="https://wa.me/5514997377444?text=Olá%20Night%20Tattoo" target="_blank" rel="noopener noreferrer" class="hover:text-gold-400 transition-colors">WhatsApp</a>
+        <a href="#inicio" class="hover:text-gold-400 transition-colors">Topo</a>
       </div>
     </div>
   </footer>
 
-  <!-- Botão WhatsApp flutuante -->
-  <a href="https://wa.me/5514997377444?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20no%20Night%20Tattoo." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/5514997377444?text=Olá%20Night%20Tattoo%20gostaria%20de%20agendar"
+     target="_blank" rel="noopener noreferrer" aria-label="Contato WhatsApp"
+     class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white flex items-center justify-center shadow-2xl hover:scale-110 hover:shadow-emerald-500/50 transition-all duration-300 animate-bounce">
+    <svg class="w-8 h-8 fill-current"><use href="#icon-whatsapp"></use></svg>
   </a>
 
-  <script src="/script.js"></script>
+  <!-- LIGHTBOX — visualização em tela cheia das imagens de portfólio -->
+  <div id="lightbox" class="lightbox fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-black/90 backdrop-blur-xl" role="dialog" aria-modal="true" aria-label="Visualização em tela cheia" aria-hidden="true">
+    <button id="lightbox-close" type="button" aria-label="Fechar imagem"
+            class="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white flex items-center justify-center transition-colors duration-300">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <div class="lightbox-frame max-w-[95vw] max-h-[92vh]">
+      <picture>
+        <source id="lightbox-src-avif" type="image/avif" srcset="">
+        <source id="lightbox-src-webp" type="image/webp" srcset="">
+        <img id="lightbox-img" src="" alt="" class="block max-w-full max-h-[88vh] w-auto h-auto object-contain rounded-xl shadow-2xl border border-white/10 bg-black/40">
+      </picture>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+  <script>
+    // ===== Vídeo de fundo: sempre rodando como um GIF =====
+    (function () {
+      const video = document.getElementById('heroVideo');
+      if (!video) return;
+
+      // Garante autoplay (alguns navegadores só liberam após interação)
+      const tryPlay = () => {
+        const p = video.play();
+        if (p && typeof p.catch === 'function') {
+          p.catch(() => {
+            const resume = () => {
+              video.play().catch(() => {});
+              document.removeEventListener('click', resume);
+              document.removeEventListener('touchstart', resume);
+              document.removeEventListener('scroll', resume);
+            };
+            document.addEventListener('click', resume, { once: true });
+            document.addEventListener('touchstart', resume, { once: true });
+            document.addEventListener('scroll', resume, { once: true, passive: true });
+          });
+        }
+      };
+
+      tryPlay();
+
+      // Loop garantido: ao terminar, volta do início sem pausa perceptível
+      video.addEventListener('ended', () => {
+        video.currentTime = 0;
+        tryPlay();
+      });
+
+      // Se o vídeo travar/descarregar, recarrega e retoma
+      video.addEventListener('error', () => {
+        video.load();
+        tryPlay();
+      });
+
+      // Retoma ao voltar para a aba
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && video.paused) tryPlay();
+      });
+    })();
+
+    // ===== Animações de revelação ao rolar (bidirecional — aparece ao entrar, reseta ao sair) =====
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          entry.target.classList.toggle('in-view', entry.isIntersecting);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      revealEls.forEach(el => io.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('in-view'));
+    }
+
+    // ===== Menu mobile =====
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // ===== Lightbox: visualização em tela cheia das imagens de portfólio =====
+    (function () {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxClose = document.getElementById('lightbox-close');
+      const lightboxSrcAvif = document.getElementById('lightbox-src-avif');
+      const lightboxSrcWebp = document.getElementById('lightbox-src-webp');
+      if (!lightbox || !lightboxImg) return;
+
+      const openLightbox = (img) => {
+        if (lightboxSrcAvif) lightboxSrcAvif.setAttribute('srcset', '');
+        if (lightboxSrcWebp) lightboxSrcWebp.setAttribute('srcset', '');
+
+        // Troca INSTANTÂNEA: usa o próprio arquivo clicado (thumbnail já em cache)
+        // antes de iniciar qualquer animação de fade/zoom — sem "estado fantasma".
+        const thumb = img.currentSrc || img.src;
+        lightboxImg.src = thumb;
+        lightboxImg.alt = img.alt || 'Portfólio Night Tattoo';
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+
+        // Versão em HD pré-carregada em segundo plano: só entra quando pronta,
+        // garantindo que o lightbox nunca exiba uma imagem antiga por 1 segundo.
+        const hd = img.dataset.hd;
+        const hdFallback = hd || img.dataset.hdWebp || img.dataset.hdAvif;
+        if (hdFallback) {
+          const preload = new Image();
+          preload.onload = () => {
+            if (lightboxImg.src !== thumb) return;
+            if (lightboxSrcAvif && img.dataset.hdAvif) lightboxSrcAvif.setAttribute('srcset', img.dataset.hdAvif);
+            if (lightboxSrcWebp && img.dataset.hdWebp) lightboxSrcWebp.setAttribute('srcset', img.dataset.hdWebp);
+            if (hd) lightboxImg.src = hd;
+          };
+          preload.src = hdFallback;
+        }
+      };
+
+      const closeLightbox = () => {
+        if (!lightbox.classList.contains('open')) return;
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+
+      document.querySelectorAll('.portfolio-img').forEach((img) => {
+        img.addEventListener('click', () => openLightbox(img));
+      });
+
+      lightbox.addEventListener('click', (e) => {
+        // Clique na própria imagem ou no botão X não fecha aqui (X tem handler próprio)
+        if (e.target === lightboxImg) return;
+        if (e.target.closest('#lightbox-close')) return;
+        closeLightbox();
+      });
+
+      if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+
+    // ===== Header com scroll otimizado (passive + rAF) =====
+    const header = document.getElementById('header');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const solid = window.scrollY > 40;
+        header.classList.toggle('bg-dark-950/95', solid);
+        header.classList.toggle('shadow-xl', solid);
+        header.classList.toggle('bg-dark-950/80', !solid);
+        ticking = false;
+      });
+    }, { passive: true });
+  </script>
 </body>
 </html>
